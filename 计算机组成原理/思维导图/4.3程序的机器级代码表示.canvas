@@ -1,0 +1,43 @@
+{
+	"nodes":[
+		{"id":"60d8a5ab52c256a1","type":"file","file":"计算机组成原理/知识文件夹/4.3程序的机器级代码表示/过程调用的机器级表示.md","x":-3080,"y":-1363,"width":828,"height":400},
+		{"id":"850ac4814269ef5b","type":"file","file":"计算机组成原理/知识文件夹/4.3程序的机器级代码表示/相关寄存器.md","x":0,"y":-1720,"width":607,"height":540},
+		{"id":"50e55345b6dd3dac","type":"file","file":"计算机组成原理/知识文件夹/4.3程序的机器级代码表示/常用指令.md","x":0,"y":-1100,"width":607,"height":565},
+		{"id":"170b344c519687b0","type":"file","file":"计算机组成原理/知识文件夹/4.3程序的机器级代码表示/数据传送指令.md","x":960,"y":-2240,"width":730,"height":563},
+		{"id":"ec5863cdcbc52751","type":"file","file":"计算机组成原理/知识文件夹/4.3程序的机器级代码表示/算术和逻辑运算指令.md","x":960,"y":-1600,"width":730,"height":1476},
+		{"id":"cc2267ae5f0d1f8e","type":"file","file":"计算机组成原理/知识文件夹/4.3程序的机器级代码表示/neg指令.md","x":1920,"y":-1600,"width":600,"height":561},
+		{"id":"d042ade003429d5c","type":"file","file":"计算机组成原理/知识文件夹/4.3程序的机器级代码表示/jmp指令.md","x":1378,"y":0,"width":600,"height":180},
+		{"id":"ddfeedcc72bf175a","type":"file","file":"计算机组成原理/知识文件夹/4.3程序的机器级代码表示/jcondition指令.md","x":1378,"y":270,"width":600,"height":300},
+		{"id":"7fdf66be25d2e274","type":"file","file":"计算机组成原理/知识文件夹/4.3程序的机器级代码表示/cmp test指令.md","x":1378,"y":680,"width":600,"height":596},
+		{"id":"3d465b488145e509","type":"file","file":"计算机组成原理/知识文件夹/4.3程序的机器级代码表示/控制流指令.md","x":744,"y":530,"width":433,"height":300},
+		{"id":"37bd74bf92ce4c2d","type":"file","file":"计算机组成原理/知识文件夹/4.3程序的机器级代码表示/汇编指令格式.md","x":0,"y":-440,"width":689,"height":1430},
+		{"id":"4dd700b1271a73c8","type":"text","text":"# 常用汇编指令介绍","x":-660,"y":-1180,"width":250,"height":60},
+		{"id":"57e4281b71304b28","type":"file","file":"计算机组成原理/知识文件夹/4.3程序的机器级代码表示/选择语句的机器级表示.md","x":-980,"y":-560,"width":804,"height":1422},
+		{"id":"8c25b1605a96cc9d","type":"file","file":"计算机组成原理/知识文件夹/4.3程序的机器级代码表示/while循环.md","x":-3108,"y":520,"width":664,"height":906},
+		{"id":"6c7c6ca29378bafb","type":"file","file":"计算机组成原理/知识文件夹/4.3程序的机器级代码表示/for循环.md","x":-2060,"y":160,"width":740,"height":1746},
+		{"id":"86c7df2109457a9c","type":"file","file":"计算机组成原理/知识文件夹/4.3程序的机器级代码表示/循环语句的机器级表示.md","x":-2020,"y":-280,"width":700,"height":170},
+		{"id":"2c88bfe3bffa82d3","type":"file","file":"计算机组成原理/知识文件夹/4.3程序的机器级代码表示/call ret指令.md","x":1378,"y":1400,"width":600,"height":220},
+		{"id":"7509137385f570b9","type":"file","file":"计算机组成原理/知识文件夹/4.3程序的机器级代码表示/do-while 循环.md","x":-3108,"y":-536,"width":664,"height":850},
+		{"id":"6faabd3ce13bd194","type":"text","text":"# 程序的机器级代码表示","x":-1560,"y":-1280,"width":301,"height":50}
+	],
+	"edges":[
+		{"id":"71b1774b65bc1c69","fromNode":"6faabd3ce13bd194","fromSide":"right","toNode":"4dd700b1271a73c8","toSide":"left"},
+		{"id":"8fa868988e995a25","fromNode":"4dd700b1271a73c8","fromSide":"right","toNode":"850ac4814269ef5b","toSide":"left"},
+		{"id":"e0eac2af46069288","fromNode":"4dd700b1271a73c8","fromSide":"right","toNode":"50e55345b6dd3dac","toSide":"left"},
+		{"id":"5f6b9df40cf22bc4","fromNode":"50e55345b6dd3dac","fromSide":"right","toNode":"170b344c519687b0","toSide":"left"},
+		{"id":"fba361d27294bc5e","fromNode":"50e55345b6dd3dac","fromSide":"right","toNode":"ec5863cdcbc52751","toSide":"left"},
+		{"id":"0a3c1260e6329757","fromNode":"ec5863cdcbc52751","fromSide":"right","toNode":"cc2267ae5f0d1f8e","toSide":"left"},
+		{"id":"d8c67a4bfeb9cb7a","fromNode":"3d465b488145e509","fromSide":"right","toNode":"d042ade003429d5c","toSide":"left"},
+		{"id":"23c6b2e71f81d1f6","fromNode":"3d465b488145e509","fromSide":"right","toNode":"ddfeedcc72bf175a","toSide":"left"},
+		{"id":"b6c4d529f29a0ea0","fromNode":"3d465b488145e509","fromSide":"right","toNode":"7fdf66be25d2e274","toSide":"left"},
+		{"id":"0a86af923b0df138","fromNode":"3d465b488145e509","fromSide":"right","toNode":"2c88bfe3bffa82d3","toSide":"left"},
+		{"id":"ae00fb435e74e45c","fromNode":"50e55345b6dd3dac","fromSide":"right","toNode":"3d465b488145e509","toSide":"top"},
+		{"id":"cce64d5a9cb43e54","fromNode":"50e55345b6dd3dac","fromSide":"bottom","toNode":"37bd74bf92ce4c2d","toSide":"top"},
+		{"id":"a8b3633d6442eb62","fromNode":"6faabd3ce13bd194","fromSide":"right","toNode":"57e4281b71304b28","toSide":"left"},
+		{"id":"dfc48a8edf5b0afe","fromNode":"6faabd3ce13bd194","fromSide":"right","toNode":"86c7df2109457a9c","toSide":"right"},
+		{"id":"8bac194d5b043676","fromNode":"86c7df2109457a9c","fromSide":"left","toNode":"7509137385f570b9","toSide":"right"},
+		{"id":"b845a1fe94973f0c","fromNode":"86c7df2109457a9c","fromSide":"left","toNode":"8c25b1605a96cc9d","toSide":"right"},
+		{"id":"46bf61236619ab13","fromNode":"86c7df2109457a9c","fromSide":"bottom","toNode":"6c7c6ca29378bafb","toSide":"top"},
+		{"id":"6f1c2a4bb929af75","fromNode":"6faabd3ce13bd194","fromSide":"left","toNode":"60d8a5ab52c256a1","toSide":"right"}
+	]
+}

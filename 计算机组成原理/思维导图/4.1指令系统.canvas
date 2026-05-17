@@ -1,0 +1,29 @@
+{
+	"nodes":[
+		{"id":"0207ec1e85e60394","type":"text","text":"## **寄存器传输语言（RTL，Register Transfer Language）**的书写规范，括号有特定含义。\n\n---\n\n## **括号的含义：加括号 = 取内容**\n\n这套符号规范里有一个核心约定：\n\n- **不加括号**：表示这个东西本身，通常是一个**地址**或**名称**\n- **加括号**：表示**该地址或寄存器里存储的内容**\n\n类比来理解：`ACC` 就像一个变量名，`(ACC)` 就像对这个变量名做了一次**解引用**，取出它里面存的值。和 C 语言里指针的 `*p` 与 `p` 的区别是一个意思。\n\n---\n\n## **逐项拆解 $(ACC)\\ OP\\ (A_1) \\rightarrow ACC$**\n\n| 符号 | 含义 |\n|------|------|\n| $A_1$ | 指令中给出的**地址码**，是一个内存地址编号 |\n| $(A_1)$ | 去 $A_1$ 这个地址读出来的**操作数内容** |\n| $ACC$ | 累加寄存器这个**部件本身**（作为存储目标时不加括号） |\n| $(ACC)$ | 累加寄存器里当前存储的**数值内容** |\n| $OP$ | 要执行的运算（加、减、与、或……） |\n| $\\rightarrow$ | 将左边的运算结果**写入**右边 |\n\n所以整条式子的完整语义是：\n\n> 取出 ACC 寄存器里的值，与内存地址 $A_1$ 处存放的值，做 OP 运算，把结果写回 ACC 寄存器。\n\n---\n\n## **为什么右边的 ACC 不加括号？**\n\n这是这套规范里**左值和右值**的区分：\n\n- 箭头**右边**是写入目标，表示\"往哪里存\"，用的是**地址/名称本身**，所以不加括号，写 $ACC$\n- 箭头**左边**是参与运算的数据，表示\"取出来用\"，用的是**内容**，所以加括号，写 $(ACC)$\n\n和 C 语言赋值语句完全类比：\n\n```c\nACC = ACC OP mem[A1];\n//左边ACC是写入目标   右边ACC是取值使用\n```\n\n对应 RTL 写法就是：\n\n$$\n(ACC)\\ OP\\ (A_1) \\rightarrow ACC\n$$\n\n---\n\n## **再看单操作数指令对比**\n\n图中第一种写法 $OP(A_1) \\rightarrow A_1$ 也是同样的规范：\n\n- $(A_1)$：取出地址 $A_1$ 处的内容，执行 OP 运算（比如加1、取反）\n- $\\rightarrow A_1$：把结果写回地址 $A_1$ 本身\n\n右边 $A_1$ 不加括号，因为它是写入的目标地址，不是取值。\n\n这套括号规范在整个计算机组成原理课程里会反复出现，掌握\"**括号 = 取内容，无括号 = 地址/名称本身**\"这一条规则就能读懂所有类似表达式。","x":1780,"y":-100,"width":640,"height":740},
+		{"id":"26c9e05b4df756f9","type":"file","file":"计算机组成原理/知识文件夹/4.1指令系统/三地址指令.md","x":980,"y":1000,"width":660,"height":200},
+		{"id":"e6c8810168804803","type":"file","file":"计算机组成原理/知识文件夹/4.1指令系统/指令的基本格式.md","x":80,"y":-40,"width":714,"height":820},
+		{"id":"3cdadbc47d89c77a","type":"text","text":"# 指令系统","x":-320,"y":920,"width":204,"height":60},
+		{"id":"1122779ff6724301","type":"file","file":"计算机组成原理/知识文件夹/4.1指令系统/指令体系结构.md","x":60,"y":-1000,"width":714,"height":870},
+		{"id":"403f883dba0e9b4d","type":"file","file":"计算机组成原理/知识文件夹/4.1指令系统/零地址指令.md","x":980,"y":-683,"width":660,"height":237},
+		{"id":"e20260f46fbbd038","type":"file","file":"计算机组成原理/知识文件夹/4.1指令系统/一地址指令.md","x":980,"y":-320,"width":660,"height":908},
+		{"id":"b76b70f6fe82db6c","type":"file","file":"计算机组成原理/知识文件夹/4.1指令系统/二地址指令.md","x":980,"y":660,"width":660,"height":240},
+		{"id":"0dfc2e8011ea7de7","type":"text","text":"# 按操作码长度分类","x":-45,"y":1682,"width":250,"height":60},
+		{"id":"cb7d91ebd4dd6680","type":"file","file":"计算机组成原理/知识文件夹/4.1指令系统/定长操作码指令格式.md","x":360,"y":1440,"width":714,"height":160},
+		{"id":"9a42454d96e5a36a","type":"file","file":"计算机组成原理/知识文件夹/4.1指令系统/扩展操作码指令格式.md","x":360,"y":1742,"width":714,"height":1100},
+		{"id":"9db97142f01a6240","type":"file","file":"计算机组成原理/知识文件夹/4.1指令系统/指令的类型.md","x":1780,"y":751,"width":880,"height":1863}
+	],
+	"edges":[
+		{"id":"8e1cf84d88380331","fromNode":"3cdadbc47d89c77a","fromSide":"right","toNode":"1122779ff6724301","toSide":"left"},
+		{"id":"a2b4169f1e7cbd85","fromNode":"3cdadbc47d89c77a","fromSide":"right","toNode":"e6c8810168804803","toSide":"left"},
+		{"id":"92ec631470a91f20","fromNode":"e6c8810168804803","fromSide":"right","toNode":"403f883dba0e9b4d","toSide":"left"},
+		{"id":"0e38d5c7a935be0a","fromNode":"e6c8810168804803","fromSide":"right","toNode":"e20260f46fbbd038","toSide":"left"},
+		{"id":"ac8152cf2a8f4af0","fromNode":"e20260f46fbbd038","fromSide":"right","toNode":"0207ec1e85e60394","toSide":"left"},
+		{"id":"89a7c09abc418178","fromNode":"e6c8810168804803","fromSide":"right","toNode":"b76b70f6fe82db6c","toSide":"left"},
+		{"id":"b7f9eb9554f3bac1","fromNode":"e6c8810168804803","fromSide":"right","toNode":"26c9e05b4df756f9","toSide":"left"},
+		{"id":"62849159a747e655","fromNode":"3cdadbc47d89c77a","fromSide":"right","toNode":"0dfc2e8011ea7de7","toSide":"left"},
+		{"id":"346642667885dfc0","fromNode":"0dfc2e8011ea7de7","fromSide":"right","toNode":"cb7d91ebd4dd6680","toSide":"left"},
+		{"id":"bd324239fc89e1d8","fromNode":"0dfc2e8011ea7de7","fromSide":"right","toNode":"9a42454d96e5a36a","toSide":"left"},
+		{"id":"a76ecce6bcda0369","fromNode":"3cdadbc47d89c77a","fromSide":"right","toNode":"9db97142f01a6240","toSide":"left"}
+	]
+}

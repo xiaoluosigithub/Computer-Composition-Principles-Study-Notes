@@ -1,0 +1,33 @@
+{
+	"nodes":[
+		{"id":"43ec649a30186dc1","type":"file","file":"计算机组成原理/知识文件夹/3.6虚拟存储器/MMU（Memory Management Unit，内存管理单元）.md","x":1196,"y":945,"width":824,"height":1015},
+		{"id":"6152b7d99ffa4d84","type":"file","file":"计算机组成原理/知识文件夹/3.6虚拟存储器/为什么分段对程序员不透明，分页对程序员透明？.md","x":3429,"y":2338,"width":931,"height":1162},
+		{"id":"b25961366e9370d3","type":"file","file":"计算机组成原理/知识文件夹/3.6虚拟存储器/地址转换.md","x":2378,"y":-1220,"width":902,"height":540},
+		{"id":"fe7bed872f9abd8b","type":"file","file":"计算机组成原理/知识文件夹/3.6虚拟存储器/页表.md","x":2378,"y":-2240,"width":902,"height":920},
+		{"id":"4619d42e3f0ba20c","type":"file","file":"计算机组成原理/知识文件夹/3.6虚拟存储器/快表（TLB）.md","x":2378,"y":-600,"width":902,"height":340},
+		{"id":"928f7a4fa99ece63","type":"file","file":"计算机组成原理/知识文件夹/3.6虚拟存储器/具有TLB和Cache的多级存储系统.md","x":2378,"y":-180,"width":882,"height":840},
+		{"id":"8c4b8616256097d8","type":"file","file":"计算机组成原理/知识文件夹/3.6虚拟存储器/TLB、Cache和Page缺失组合的分析.md","x":2378,"y":860,"width":862,"height":1020},
+		{"id":"c1bf464f124c0e98","type":"file","file":"计算机组成原理/知识文件夹/3.6虚拟存储器/段式虚拟存储器.md","x":1540,"y":2240,"width":1160,"height":1020},
+		{"id":"4eb9917114027aa6","type":"file","file":"计算机组成原理/知识文件夹/3.6虚拟存储器/段页式虚拟存储器.md","x":1440,"y":3840,"width":800,"height":280},
+		{"id":"74aad5b278751a8c","type":"file","file":"计算机组成原理/知识文件夹/3.6虚拟存储器/虚拟存储器的基本概念.md","x":-80,"y":860,"width":780,"height":740},
+		{"id":"eee794a8d1ff6ba8","type":"file","file":"计算机组成原理/知识文件夹/3.6虚拟存储器/页式虚拟存储器.md","x":1040,"y":-180,"width":720,"height":160},
+		{"id":"30d2477d49cce78c","type":"text","text":"这是段页式管理的核心数据结构，用一个具体的例子来拆解就很清楚了。\n\n---\n\n## **先理解段表和页表分别是什么**\n\n**段表**是程序级别的，一个程序只有一张段表。它记录的是这个程序有哪些段，以及每个段对应的页表在哪里：\n\n```\n段表（整个程序只有一张）\n┌──────┬──────────────┬──────┐\n│ 段号 │ 对应页表的地址 │ 段长 │\n├──────┼──────────────┼──────┤\n│  0   │  页表0的地址  │ ...  │  ← 代码段\n│  1   │  页表1的地址  │ ...  │  ← 数据段\n│  2   │  页表2的地址  │ ...  │  ← 堆段\n│  3   │  页表3的地址  │ ...  │  ← 栈段\n└──────┴──────────────┴──────┘\n```\n\n**页表**是段级别的，每个段单独有一张页表。它记录的是这个段内的每一个虚拟页对应哪个物理帧：\n\n```\n代码段的页表（页表0）        数据段的页表（页表1）\n┌──────┬─────┬──────┐      ┌──────┬─────┬──────┐\n│ 页号  │有效位│ PFN  │      │ 页号 │有效位│ PFN  │\n├──────┼─────┼──────┤      ├──────┼─────┼──────┤\n│  0   │  1  │ 023  │      │  0   │  1  │ 056  │\n│  1   │  1  │ 107  │      │  1   │  0  │  -   │\n│  2   │  0  │  -   │      └──────┴─────┴──────┘\n└──────┴─────┴──────┘\n```\n\n---\n\n## **为什么要这样设计？两级结构的好处**\n\n如果只用页表，整个程序的所有虚拟页混在一张大表里，无法区分哪些页属于代码、哪些属于数据，也无法对不同逻辑区域设置不同的权限（比如代码段只读、栈段可读写）。\n\n段表 + 页表的两级结构，让操作系统可以**以段为单位管理权限和属性，以页为单位管理物理内存的装入换出**，兼顾了逻辑清晰和物理灵活。\n\n---\n\n## **虚拟地址三段拆分的完整翻译过程**\n\n虚拟地址由三部分组成：\n\n$$\n\\underbrace{\\text{段号}}_{\\text{S}} \\quad | \\quad \\underbrace{\\text{段内页号}}_{\\text{P}} \\quad | \\quad \\underbrace{\\text{页内偏移}}_{\\text{offset}}\n$$\n\n翻译过程是两次查表：\n\n```\n虚拟地址：段号S ＋ 段内页号P ＋ 页内偏移offset\n          │\n          ▼\n第一步：用段号S查段表\n        → 找到该段对应的页表基地址\n          │\n          ▼\n第二步：用段内页号P查该段的页表\n        → 找到对应的物理帧号PFN\n          │\n          ▼\n第三步：PFN拼接offset\n        → 得到最终物理地址PA\n```\n\n---\n\n## **一个具体的例子**\n\n假设虚拟地址是 `(段号=1, 段内页号=0, 页内偏移=0x3AC)`：\n\n```\n1. 查段表，段号1 → 找到数据段的页表地址\n\n2. 查数据段页表，页号0 → 有效位=1，PFN=056\n\n3. 物理地址 = 056号页框起始地址 + 0x3AC\n```\n\n整个过程需要**两次查表**才能得到物理地址，这也是段页式相比纯分页多一次查表开销的代价。当然实际系统中 TLB 同样会缓存最终的翻译结果，命中时依然一步到位，不需要真的走这两步。","x":2440,"y":3500,"width":840,"height":1860},
+		{"id":"34d0bd29f42d6148","type":"file","file":"计算机组成原理/知识文件夹/3.6虚拟存储器/虚拟存储器.md","x":-1120,"y":1480,"width":600,"height":500},
+		{"id":"1df49f511066f886","type":"file","file":"计算机组成原理/知识文件夹/3.6虚拟存储器/虚拟存储器与Cache的比较.md","x":-120,"y":1980,"width":820,"height":400}
+	],
+	"edges":[
+		{"id":"18b72878da1099d8","fromNode":"34d0bd29f42d6148","fromSide":"right","toNode":"74aad5b278751a8c","toSide":"left"},
+		{"id":"19c3f23852f12fee","fromNode":"74aad5b278751a8c","fromSide":"right","toNode":"eee794a8d1ff6ba8","toSide":"left"},
+		{"id":"886b049e5dc25d70","fromNode":"eee794a8d1ff6ba8","fromSide":"right","toNode":"fe7bed872f9abd8b","toSide":"left"},
+		{"id":"945d0efc2c84bc65","fromNode":"eee794a8d1ff6ba8","fromSide":"right","toNode":"b25961366e9370d3","toSide":"left"},
+		{"id":"270c73ce98f076cc","fromNode":"eee794a8d1ff6ba8","fromSide":"right","toNode":"4619d42e3f0ba20c","toSide":"left"},
+		{"id":"89b8b05e7757ffaf","fromNode":"eee794a8d1ff6ba8","fromSide":"right","toNode":"928f7a4fa99ece63","toSide":"left"},
+		{"id":"1da19201947d1f59","fromNode":"eee794a8d1ff6ba8","fromSide":"right","toNode":"8c4b8616256097d8","toSide":"left"},
+		{"id":"cb7e998d7d3481fe","fromNode":"74aad5b278751a8c","fromSide":"right","toNode":"c1bf464f124c0e98","toSide":"left"},
+		{"id":"5563a59a38419921","fromNode":"c1bf464f124c0e98","fromSide":"right","toNode":"6152b7d99ffa4d84","toSide":"left"},
+		{"id":"981fbc4e5dbcf06f","fromNode":"74aad5b278751a8c","fromSide":"right","toNode":"4eb9917114027aa6","toSide":"left"},
+		{"id":"e7c6be4266e9a782","fromNode":"4eb9917114027aa6","fromSide":"right","toNode":"30d2477d49cce78c","toSide":"left"},
+		{"id":"37089b584d4fa306","fromNode":"34d0bd29f42d6148","fromSide":"right","toNode":"1df49f511066f886","toSide":"left"},
+		{"id":"7cd8005b48d2c4b2","fromNode":"74aad5b278751a8c","fromSide":"right","toNode":"43ec649a30186dc1","toSide":"left"}
+	]
+}

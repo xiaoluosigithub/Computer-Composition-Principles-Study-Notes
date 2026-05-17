@@ -1,0 +1,42 @@
+{
+	"nodes":[
+		{"id":"a0fbaa3796ad2398","type":"file","file":"计算机组成原理/知识文件夹/4.2寻址方式/变址寻址与基址寻址区别.md","x":-3060,"y":1442,"width":714,"height":195},
+		{"id":"ebdc337edeb5817e","type":"file","file":"计算机组成原理/知识文件夹/4.2寻址方式/变址寻址.md","x":-2080,"y":1640,"width":762,"height":522},
+		{"id":"5d687b057890b154","type":"file","file":"计算机组成原理/知识文件夹/4.2寻址方式/隐含寻址.md","x":1022,"y":-659,"width":738,"height":539},
+		{"id":"e1a2e7c236cede08","type":"file","file":"计算机组成原理/知识文件夹/4.2寻址方式/指令寻址.md","x":129,"y":-740,"width":711,"height":883},
+		{"id":"bbb5af1f37c129a1","type":"file","file":"计算机组成原理/知识文件夹/4.2寻址方式/立即寻址.md","x":1022,"y":-20,"width":738,"height":372},
+		{"id":"54b15a55d30e0292","type":"text","text":"### \"寻址范围有限\"确实容易让人误解，更准确的说法应该是\"操作数的表示范围有限\"。\n\n---\n\n## **为什么说\"寻址范围有限\"是不准确的**\n\n立即寻址的本质是：地址字段里存的根本不是地址，而是**数据本身**。既然压根没有\"寻址\"这个动作，谈\"寻址范围\"就是一个自相矛盾的说法。\n\n真正受限的是**立即数能表示的数值范围**，这取决于地址字段有多少位。比如地址字段是 8 位，那立即数最大只能表示 $-128 \\sim 127$（补码）或 $0 \\sim 255$（无符号），你没办法把一个很大的数直接塞进指令里。\n\n---\n\n## **为什么教材会这样写**\n\n这其实是很多教材的一个惯用表述习惯——把\"操作数的可表示范围\"笼统地说成\"寻址范围\"，是从**与其他寻址方式横向对比**的角度出发的。\n\n其他寻址方式（直接寻址、间接寻址、寄存器寻址等）的\"寻址范围\"指的是地址字段能指向的内存地址范围，地址字段位数越多，能访问的内存空间越大。教材在列缺点时沿用了\"寻址范围\"这个统一的比较维度，把立即寻址的\"数值表示范围受限\"也套进了这个框架里说，导致表述不够严谨。\n\n---\n\n理解这个知识点时，记住立即寻址**没有寻址过程**，它的真正缺点是：**立即数的位数受地址字段限制，能直接编码进指令的数值大小非常有限**，这才是准确的表述。","x":1900,"y":-20,"width":740,"height":695},
+		{"id":"fde72f7558f6bdbe","type":"file","file":"计算机组成原理/知识文件夹/4.2寻址方式/直接寻址.md","x":1022,"y":380,"width":738,"height":360},
+		{"id":"6e1255e3468ceb4e","type":"file","file":"计算机组成原理/知识文件夹/4.2寻址方式/间接寻址.md","x":1022,"y":840,"width":738,"height":544},
+		{"id":"7a47ab5ce61c6eb5","type":"file","file":"计算机组成原理/知识文件夹/4.2寻址方式/寄存器寻址.md","x":1022,"y":1500,"width":738,"height":503},
+		{"id":"8ef9307677933710","type":"file","file":"计算机组成原理/知识文件夹/4.2寻址方式/寄存器间接寻址.md","x":1022,"y":2100,"width":738,"height":508},
+		{"id":"7be3950919045f33","type":"file","file":"计算机组成原理/知识文件夹/4.2寻址方式/数据寻址.md","x":100,"y":380,"width":711,"height":578},
+		{"id":"38c4b1b1006fb763","type":"text","text":"![[Pasted image 20260515184315.png|736]]\n![[Pasted image 20260516085716.png]]","x":100,"y":1024,"width":711,"height":589},
+		{"id":"68c0c6ea7deb2674","type":"text","text":"# 寻址方式","x":-880,"y":208,"width":160,"height":60},
+		{"id":"758c37214af1a5da","type":"file","file":"计算机组成原理/知识文件夹/4.2寻址方式/寻址方式.md","x":-600,"y":166,"width":502,"height":144},
+		{"id":"16ee234ba8cdc860","type":"file","file":"计算机组成原理/知识文件夹/4.2寻址方式/偏移寻址.md","x":-1073,"y":891,"width":673,"height":409},
+		{"id":"01d14ac8ee45f520","type":"file","file":"计算机组成原理/知识文件夹/4.2寻址方式/相对寻址.md","x":-2080,"y":294,"width":762,"height":597},
+		{"id":"249e98d676487cdf","type":"file","file":"计算机组成原理/知识文件夹/4.2寻址方式/基址寻址.md","x":-2080,"y":1012,"width":762,"height":548},
+		{"id":"2696362f12514dec","type":"file","file":"计算机组成原理/知识文件夹/4.2寻址方式/堆栈寻址.md","x":-1040,"y":1560,"width":700,"height":267}
+	],
+	"edges":[
+		{"id":"fb080f14b7e01c59","fromNode":"68c0c6ea7deb2674","fromSide":"right","toNode":"758c37214af1a5da","toSide":"left"},
+		{"id":"6dbfab26ea32c00a","fromNode":"758c37214af1a5da","fromSide":"right","toNode":"e1a2e7c236cede08","toSide":"left"},
+		{"id":"f9a39a70e1c1d8bb","fromNode":"758c37214af1a5da","fromSide":"right","toNode":"7be3950919045f33","toSide":"left"},
+		{"id":"d5d0980dd04f92f3","fromNode":"7be3950919045f33","fromSide":"right","toNode":"5d687b057890b154","toSide":"left"},
+		{"id":"4ce275c618fee28c","fromNode":"7be3950919045f33","fromSide":"right","toNode":"bbb5af1f37c129a1","toSide":"left"},
+		{"id":"25f49d4a037e66e3","fromNode":"bbb5af1f37c129a1","fromSide":"right","toNode":"54b15a55d30e0292","toSide":"left"},
+		{"id":"0976d738a5f10d5d","fromNode":"7be3950919045f33","fromSide":"right","toNode":"fde72f7558f6bdbe","toSide":"left"},
+		{"id":"32d4dc6d35aa75c3","fromNode":"7be3950919045f33","fromSide":"right","toNode":"6e1255e3468ceb4e","toSide":"left"},
+		{"id":"93bfe5c6ddf4b92c","fromNode":"7be3950919045f33","fromSide":"right","toNode":"7a47ab5ce61c6eb5","toSide":"left"},
+		{"id":"1968d8442f9f8de0","fromNode":"7be3950919045f33","fromSide":"right","toNode":"8ef9307677933710","toSide":"left"},
+		{"id":"4ba71f4acd8f8e3d","fromNode":"7be3950919045f33","fromSide":"bottom","toNode":"38c4b1b1006fb763","toSide":"top"},
+		{"id":"959bc663f72b630f","fromNode":"7be3950919045f33","fromSide":"left","toNode":"16ee234ba8cdc860","toSide":"right"},
+		{"id":"4fb5348e7c197c4a","fromNode":"16ee234ba8cdc860","fromSide":"left","toNode":"01d14ac8ee45f520","toSide":"right"},
+		{"id":"a97d18863bbd635e","fromNode":"16ee234ba8cdc860","fromSide":"left","toNode":"249e98d676487cdf","toSide":"right"},
+		{"id":"460e4683db555763","fromNode":"16ee234ba8cdc860","fromSide":"left","toNode":"ebdc337edeb5817e","toSide":"right"},
+		{"id":"3480c01310a0e8cf","fromNode":"249e98d676487cdf","fromSide":"left","toNode":"a0fbaa3796ad2398","toSide":"right"},
+		{"id":"3338dc2f227956f0","fromNode":"ebdc337edeb5817e","fromSide":"left","toNode":"a0fbaa3796ad2398","toSide":"right"},
+		{"id":"92ce40f99dcd180b","fromNode":"7be3950919045f33","fromSide":"left","toNode":"2696362f12514dec","toSide":"right"}
+	]
+}
