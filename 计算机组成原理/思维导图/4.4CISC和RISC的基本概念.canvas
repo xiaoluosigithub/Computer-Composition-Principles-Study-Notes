@@ -1,0 +1,14 @@
+{
+	"nodes":[
+		{"id":"3d84929f24c1f9b3","type":"file","file":"计算机组成原理/知识文件夹/4.4CISC和RISC的基本概念/CISC和RISC的基本概念.md","x":-640,"y":-200,"width":539,"height":267},
+		{"id":"753bb56bf59387ec","type":"file","file":"计算机组成原理/知识文件夹/4.4CISC和RISC的基本概念/复杂指令系统计算机（CISC）.md","x":40,"y":-500,"width":720,"height":480},
+		{"id":"149defbbec36142a","type":"file","file":"计算机组成原理/知识文件夹/4.4CISC和RISC的基本概念/精简指令系统计算机（RISC）.md","x":40,"y":67,"width":720,"height":525},
+		{"id":"ce4352c822bdf997","type":"file","file":"计算机组成原理/知识文件夹/4.4CISC和RISC的基本概念/CISC和RISC的比较.md","x":1040,"y":-306,"width":728,"height":636}
+	],
+	"edges":[
+		{"id":"535cef98baa4820d","fromNode":"3d84929f24c1f9b3","fromSide":"right","toNode":"753bb56bf59387ec","toSide":"left"},
+		{"id":"2b8ba91b5a3c7943","fromNode":"3d84929f24c1f9b3","fromSide":"right","toNode":"149defbbec36142a","toSide":"left"},
+		{"id":"1142910eb4c5a02a","fromNode":"753bb56bf59387ec","fromSide":"right","toNode":"ce4352c822bdf997","toSide":"left"},
+		{"id":"77f144cff157bf1a","fromNode":"149defbbec36142a","fromSide":"right","toNode":"ce4352c822bdf997","toSide":"left"}
+	]
+}

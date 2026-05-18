@@ -145,7 +145,7 @@ git clone https://github.com/xiaoluosigithub/Computer-Composition-Principles-Stu
 
 ## 📄 许可证
 
-本项目采用 [MIT License](LICENSE) 开源协议，欢迎学习与二次分享，转载请注明出处。
+本项目采用 [MIT License](LICENSE.md) 开源协议，欢迎学习与二次分享，转载请注明出处。
 
 ---
 
