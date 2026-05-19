@@ -1,14 +1,14 @@
 {
 	"nodes":[
 		{"id":"74cfa99236a6c2e2","type":"file","file":"计算机组成原理/知识文件夹/5.1CPU的功能和基本结构/CPU的基本结构.md","x":56,"y":-197,"width":684,"height":1017},
-		{"id":"0d92757f8db94967","type":"file","file":"计算机组成原理/知识文件夹/5.1CPU的功能和基本结构/CPU的功能.md","x":60,"y":-652,"width":680,"height":352},
 		{"id":"9af0bc8845ad1c52","type":"text","text":"# CPU的功能和基本结构","x":-600,"y":282,"width":312,"height":60},
 		{"id":"550f6a90c78748cf","type":"file","file":"计算机组成原理/知识文件夹/5.1CPU的功能和基本结构/运算器的基本结构.md","x":1040,"y":-874,"width":756,"height":677},
 		{"id":"895c74eb24dde384","type":"file","file":"计算机组成原理/知识文件夹/5.1CPU的功能和基本结构/控制器基本结构.md","x":1040,"y":-4,"width":756,"height":920},
 		{"id":"342c2ba16a36eeae","type":"text","text":"1. 总线控制逻辑：实现对总线传输的控制，包括对数据和地址信息的缓冲与控制。\n2. 中断机构：实现对异常情况和外部中断请求的处理。","x":1040,"y":-124,"width":756,"height":69},
 		{"id":"02df396644a55bb8","type":"file","file":"计算机组成原理/知识文件夹/5.1CPU的功能和基本结构/用户可见寄存器.md","x":905,"y":1120,"width":695,"height":240},
 		{"id":"6d784afb812abdb7","type":"file","file":"计算机组成原理/知识文件夹/5.1CPU的功能和基本结构/CPU中的寄存器.md","x":56,"y":1069,"width":684,"height":583},
-		{"id":"8ed7b7fa037a40d1","type":"file","file":"计算机组成原理/知识文件夹/5.1CPU的功能和基本结构/用户不可见寄存器.md","x":905,"y":1440,"width":695,"height":150}
+		{"id":"8ed7b7fa037a40d1","type":"file","file":"计算机组成原理/知识文件夹/5.1CPU的功能和基本结构/用户不可见寄存器.md","x":905,"y":1440,"width":695,"height":150},
+		{"id":"0d92757f8db94967","type":"file","file":"计算机组成原理/知识文件夹/5.1CPU的功能和基本结构/CPU的功能.md","x":56,"y":-660,"width":680,"height":352}
 	],
 	"edges":[
 		{"id":"897eb1db7ce341ae","fromNode":"9af0bc8845ad1c52","fromSide":"right","toNode":"0d92757f8db94967","toSide":"left"},
