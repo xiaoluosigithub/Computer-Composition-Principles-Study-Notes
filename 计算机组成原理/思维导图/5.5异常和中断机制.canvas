@@ -1,0 +1,38 @@
+{
+	"nodes":[
+		{"id":"59a7fbe69e88a0b4","type":"file","file":"计算机组成原理/知识文件夹/5.5异常和中断机制/异常和中断响应过程.md","x":-1144,"y":1654,"width":604,"height":206},
+		{"id":"e9defffda1b9cf2d","type":"file","file":"计算机组成原理/知识文件夹/5.5异常和中断机制/故障（Fault）.md","x":691,"y":-116,"width":589,"height":315},
+		{"id":"8613ebc439d4bac6","type":"file","file":"计算机组成原理/知识文件夹/5.5异常和中断机制/异常的分类.md","x":-104,"y":200,"width":644,"height":291},
+		{"id":"8806934345dcff69","type":"file","file":"计算机组成原理/知识文件夹/5.5异常和中断机制/自陷（Trap）.md","x":691,"y":240,"width":589,"height":376},
+		{"id":"cc205516aa97837e","type":"text","text":"故障异常和自陷异常属于程序性异常（软件中断）","x":1482,"y":323,"width":250,"height":60},
+		{"id":"b4dc316ee1bc1467","type":"file","file":"计算机组成原理/知识文件夹/5.5异常和中断机制/终止（Abort）.md","x":691,"y":660,"width":589,"height":240},
+		{"id":"92a4780a49cdd288","type":"file","file":"计算机组成原理/知识文件夹/5.5异常和中断机制/中断的分类.md","x":-104,"y":980,"width":644,"height":214},
+		{"id":"a9d8bee1cac1d082","type":"file","file":"计算机组成原理/知识文件夹/5.5异常和中断机制/可屏蔽中断.md","x":691,"y":940,"width":589,"height":160},
+		{"id":"37b9e53c88096c78","type":"file","file":"计算机组成原理/知识文件夹/5.5异常和中断机制/不可屏蔽中断.md","x":691,"y":1160,"width":589,"height":160},
+		{"id":"6076d203a14d60e9","type":"text","text":"终止异常和外中断属于硬件中断","x":1504,"y":968,"width":250,"height":60},
+		{"id":"4edc026a4ac16079","type":"file","file":"计算机组成原理/知识文件夹/5.5异常和中断机制/异常和中断的基本概念.md","x":-1099,"y":354,"width":644,"height":546},
+		{"id":"65736298ba79dd36","type":"file","file":"计算机组成原理/知识文件夹/5.5异常和中断机制/中断和异常的差异.md","x":-1099,"y":1040,"width":644,"height":445},
+		{"id":"4e856cba6fa4ac38","type":"text","text":"# 异常和中断机制","x":-1600,"y":955,"width":250,"height":50},
+		{"id":"e711b807d6a09bd0","type":"file","file":"计算机组成原理/知识文件夹/5.5异常和中断机制/关中断.md","x":-304,"y":1320,"width":604,"height":198},
+		{"id":"cd6534c683c5a0a7","type":"file","file":"计算机组成原理/知识文件夹/5.5异常和中断机制/保存断点和程序状态.md","x":-304,"y":1557,"width":604,"height":259},
+		{"id":"7bc3657b26791d33","type":"file","file":"计算机组成原理/知识文件夹/5.5异常和中断机制/识别事件类型并转移至处理程序.md","x":-304,"y":1860,"width":604,"height":512}
+	],
+	"edges":[
+		{"id":"8c6f918af51ee3b8","fromNode":"4e856cba6fa4ac38","fromSide":"right","toNode":"4edc026a4ac16079","toSide":"left"},
+		{"id":"344f3d4778942a85","fromNode":"4edc026a4ac16079","fromSide":"right","toNode":"8613ebc439d4bac6","toSide":"left"},
+		{"id":"ea5e1e0047c65837","fromNode":"8613ebc439d4bac6","fromSide":"right","toNode":"e9defffda1b9cf2d","toSide":"left"},
+		{"id":"e8eea7a0a409aeed","fromNode":"8613ebc439d4bac6","fromSide":"right","toNode":"8806934345dcff69","toSide":"left"},
+		{"id":"abf5ad76436140f3","fromNode":"e9defffda1b9cf2d","fromSide":"right","toNode":"cc205516aa97837e","toSide":"left"},
+		{"id":"b3ebab6e343954fd","fromNode":"8806934345dcff69","fromSide":"right","toNode":"cc205516aa97837e","toSide":"left"},
+		{"id":"f1cf59d8491dc509","fromNode":"8613ebc439d4bac6","fromSide":"right","toNode":"b4dc316ee1bc1467","toSide":"left"},
+		{"id":"97f1a0911c88adbe","fromNode":"4edc026a4ac16079","fromSide":"right","toNode":"92a4780a49cdd288","toSide":"left"},
+		{"id":"b194d175bf1bb8b2","fromNode":"92a4780a49cdd288","fromSide":"right","toNode":"a9d8bee1cac1d082","toSide":"left"},
+		{"id":"b5ca19de579208a7","fromNode":"92a4780a49cdd288","fromSide":"right","toNode":"37b9e53c88096c78","toSide":"left"},
+		{"id":"a96f7787da9df188","fromNode":"b4dc316ee1bc1467","fromSide":"right","toNode":"6076d203a14d60e9","toSide":"left"},
+		{"id":"08db10845df55e9b","fromNode":"4e856cba6fa4ac38","fromSide":"right","toNode":"65736298ba79dd36","toSide":"left"},
+		{"id":"fa6ede758091cee6","fromNode":"4e856cba6fa4ac38","fromSide":"right","toNode":"59a7fbe69e88a0b4","toSide":"left"},
+		{"id":"07271c48af5fa7ae","fromNode":"59a7fbe69e88a0b4","fromSide":"right","toNode":"e711b807d6a09bd0","toSide":"left"},
+		{"id":"a4dc8be9d9ec9dbb","fromNode":"59a7fbe69e88a0b4","fromSide":"right","toNode":"cd6534c683c5a0a7","toSide":"left"},
+		{"id":"fbdc798ce27dbc9e","fromNode":"59a7fbe69e88a0b4","fromSide":"right","toNode":"7bc3657b26791d33","toSide":"left"}
+	]
+}
